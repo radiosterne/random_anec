@@ -17,13 +17,19 @@ function randInt(min, max) {
 	return Math.round(min + Math.random() * (max - min));
 }
 
+function randArrayValue(arr) {
+	//Contract.Assert(arr != null);
+	//Contract.Assert(arr.Any());
+	return arr[randInt(0, arr.length - 1)];
+}
+
 function result() { 
-	var who_x = who[randInt(0, who.length - 1)];
-	var comes_x = comes[randInt(0, comes.length - 1)];
-	var says_x = says[randInt(0, says.length - 1)];
-	var other_x = other[randInt(0, other.length - 1)];
-	var answers_x = answers[randInt(0, answers.length - 1)];
-	var final_x = finale[randInt(0, finale.length - 1)];
+	var who_x = randArrayValue(who);
+	var comes_x = randArrayValue(comes);
+	var says_x = randArrayValue(says);
+	var other_x = randArrayValue(other);
+	var answers_x = randArrayValue(answers);
+	var final_x = randArrayValue(finale);
 	return "Приходит " + who_x + " " + comes_x + ": \"" + says_x + "\". " +
 	other_x + ": \"" + answers_x + "\". " +
 	final_x + ((final_x[final_x.length - 1] == "?" || final_x[final_x.length - 1] == "!") ? "" : ".");
