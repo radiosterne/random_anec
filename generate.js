@@ -18,12 +18,12 @@ function randInt(min, max) {
 }
 
 function result() { 
-	var who_x = who[randInt(0, 9)];
-	var comes_x = comes[randInt(0, 9)];
-	var says_x = says[randInt(0, 9)];
-	var other_x = other[randInt(0, 9)];
-	var answers_x = answers[randInt(0, 9)];
-	var final_x = finale[randInt(0, 9)];
+	var who_x = who[randInt(0, who.length - 1)];
+	var comes_x = comes[randInt(0, comes.length - 1)];
+	var says_x = says[randInt(0, says.length - 1)];
+	var other_x = other[randInt(0, other.length - 1)];
+	var answers_x = answers[randInt(0, answers.length - 1)];
+	var final_x = finale[randInt(0, finale.length - 1)];
 	return "Приходит " + who_x + " " + comes_x + ": \"" + says_x + "\". " +
 	other_x + ": \"" + answers_x + "\". " +
 	final_x + ((final_x[final_x.length - 1] == "?" || final_x[final_x.length - 1] == "!") ? "" : ".");
